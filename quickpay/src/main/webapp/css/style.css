@@ -1,0 +1,71 @@
+@CHARSET "ISO-8859-1";
+
+
+body {
+	font-family: montserrat, arial, verdana;
+		background: white;
+	
+}
+#testform{
+    width: auto;
+    height: auto;
+	margin: 50px auto;
+	text-align: center;
+	position: relative;
+}
+
+#testform fieldset {
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 10px 30px 30px;
+	text-align: center;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 10%;
+	/*stacking fieldsets above each other*/
+	position: relative;
+}
+#testform fieldset:not(:first-of-type) {
+	display: block;
+}
+
+#testform input, #testform textarea {
+	
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin-bottom: 10px;
+	width: 50%;
+	box-sizing: border-box;
+	color: #2C3E50;
+	font-size: 18px;
+}
+
+#testform input[type="radio"] { width: inherit !important;}
+#testform input[class="login"] { width: 30% !important;}
+
+#testform .adduserbutton {
+	width: 100px;
+	background: #27AE60;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 3px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+
+#testform .adduserbutton:hover, #testform .action-button:focus {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60,;
+}
+
+.fs-title {
+	text-align: center;
+	font-size: 21px;
+	text-transform: uppercase;
+	color: #27AE60;
+	margin-bottom: 10px;
+}
