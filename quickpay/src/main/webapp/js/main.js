@@ -57,7 +57,7 @@ $(function(){
 							dataType: "json",
 							success:function (successResponse2,textStatus,jqXHR) {
 								if(textStatus == "success"){
-									alert("Registered:"+textStatus+"\n Use Following credentials to login:\n"
+									alert("Registered:"+textStatus+"\n\n Use Following credentials to login:\n\n"
 											+"Username:"+customerId+"Password:"+password+"\nGender is:"+gender);
 								}
 								else{

@@ -5,7 +5,7 @@
 <body>
 <h1 style="font-size:40px"class ="fs-title">welcome to quickpay</h1>
 
-	<form action ="" method= "post" name= "testform" id="testform"s>
+	<form action ="" method= "post" name= "testform" id="testform">
 		<fieldset>
 			<h2 class="fs-title">Login</h2>
 			<input  class ="login" placeholder="Username" type="text" id="username" name="username" />

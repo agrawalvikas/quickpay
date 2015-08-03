@@ -26,7 +26,6 @@ public class MyResource {
         return AccountService.getAllAccounts();
     }
     
-    
     @Path("createAccount")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
