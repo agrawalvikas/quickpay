@@ -22,6 +22,7 @@ public class DBService {
 		if (conn!=null) {
 			conn.close();
 			conn = null;
+			System.out.println("Connection is closed");
 		}
 	}
 	public static DBService getInstance(){

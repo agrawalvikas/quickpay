@@ -9,11 +9,12 @@ import java.util.List;
 
 import com.gtu.project.quickpay.dao.DBService;
 import com.gtu.project.quickpay.models.Account;
-
 public class AccountService {
 
 	public static final String GET_ACCOUNT = "SELECT * FROM ACCOUNTS";
 	public static final String INSERT_USER = "INSERT INTO ACCOUNTS";
+	static Connection con = DBService.getConnection();
+
 
 	public static List<Account> getAllAccounts(){
 		List<Account> all = new ArrayList<Account>();
@@ -29,7 +30,6 @@ public class AccountService {
 	
 	public static List<Account> executeQuery(String query) throws ClassNotFoundException,
 	SQLException {
-		Connection con = DBService.getConnection();
 		Statement stmt = con.createStatement();
 		ResultSet rs = stmt.executeQuery(query);
 		List<Account> als = convertPojoList(rs);
@@ -40,7 +40,7 @@ public class AccountService {
 	private static List<Account> convertPojoList(ResultSet rs) throws SQLException {
 		List<Account> asl = new ArrayList<Account>();
 		while (rs.next()) {
-			Account account  = new Account(rs.getInt("accountNo"),rs.getInt("balance"),rs.getInt("pin"),rs.getString("cardId"));
+			Account account  = new Account(rs.getInt("accountNo"),rs.getInt("balance"),rs.getInt("pin"),rs.getString("cardID"));
 			asl.add(account);
 		}
 		return asl;
