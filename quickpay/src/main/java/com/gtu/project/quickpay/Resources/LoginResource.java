@@ -20,7 +20,10 @@ public class LoginResource {
 	public long loginUser(@PathParam("username") int userId,@PathParam("password") String password){
 		return UserService.loginUser(userId,password);
 	}
-	
+	@GET
+	public String getIt(){
+		return "Hello you got it";
+	}
 	
 	@Path("{custID}")
 	@GET

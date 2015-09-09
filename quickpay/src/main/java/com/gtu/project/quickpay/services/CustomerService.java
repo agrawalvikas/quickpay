@@ -8,7 +8,6 @@ import com.gtu.project.quickpay.models.Customer;
 
 public class CustomerService {
 	public static final String INSERT_CUSTOMER = "INSERT INTO CUSTOMERS";
-	static Connection con = DBService.getConnection();
 
 	public static Customer createCustomer(String firstName,String middleName,String lastName,String gender,
 			String address,int pincode,long phone,String email,
@@ -35,6 +34,7 @@ public class CustomerService {
 	}
 	public static void executeUpdateQuery(String query) throws SQLException,
 	ClassNotFoundException {
+		Connection con = DBService.getConnection();
 		Statement stmt = con.createStatement();
 		stmt.execute(query);
 		DBService.closeConnection();

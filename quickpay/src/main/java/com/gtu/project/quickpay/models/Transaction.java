@@ -11,6 +11,16 @@ public class Transaction {
 	private String date;
 	private String tranStatus;
 	
+	public Transaction(long transactionId, long senderId, long receiverId,
+			int ammount, String date, String tranStatus) {
+		super();
+		this.transactionId = transactionId;
+		this.senderId = senderId;
+		this.receiverId = receiverId;
+		this.ammount = ammount;
+		this.date = date;
+		this.tranStatus = tranStatus;
+	}
 	public Transaction(long senderId, long receiverId,
 			int ammount) {
 		super();

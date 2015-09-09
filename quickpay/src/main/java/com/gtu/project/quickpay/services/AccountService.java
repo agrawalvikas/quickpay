@@ -13,7 +13,6 @@ public class AccountService {
 
 	public static final String GET_ACCOUNT = "SELECT * FROM ACCOUNTS";
 	public static final String INSERT_USER = "INSERT INTO ACCOUNTS";
-	static Connection con = DBService.getConnection();
 
 
 	public static List<Account> getAllAccounts(){
@@ -30,6 +29,7 @@ public class AccountService {
 	
 	public static List<Account> executeQuery(String query) throws ClassNotFoundException,
 	SQLException {
+		Connection con = DBService.getConnection();
 		Statement stmt = con.createStatement();
 		ResultSet rs = stmt.executeQuery(query);
 		List<Account> als = convertPojoList(rs);

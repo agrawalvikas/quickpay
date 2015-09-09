@@ -11,7 +11,6 @@ import com.gtu.project.quickpay.models.User;
 
 public class UserService {
 	public static final String INSERT_USER = "INSERT INTO USERS";
-	static Connection con = DBService.getConnection();
 	public static User createUser(long customerId,String password)
 	{
 		User user = new User(customerId,password);
@@ -28,6 +27,7 @@ public class UserService {
 	}
 	public static void executeUpdateQuery(String query) throws SQLException,
 	ClassNotFoundException {
+		Connection con = DBService.getConnection();
 		Statement stmt = con.createStatement();
 		stmt.execute(query);
 		DBService.closeConnection();
@@ -49,6 +49,7 @@ public class UserService {
 	
 	public static long executeQuery(String query) throws ClassNotFoundException,
 	SQLException {
+		Connection con = DBService.getConnection();
 		long customerId = 0;
 		Statement stmt = con.createStatement();
 		ResultSet rs = stmt.executeQuery(query);
@@ -69,6 +70,7 @@ public class UserService {
 		LoggedUser loggedUser = null;
 		Statement stmt = null;
 		ResultSet rs = null;
+		Connection con = DBService.getConnection();
 
 		try {
 			stmt = con.createStatement();

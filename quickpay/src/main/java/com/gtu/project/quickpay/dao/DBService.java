@@ -11,7 +11,7 @@ public class DBService {
 		try {
 			conn=DBConnection.getDataSource().getConnection();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block]
+			// TODO Auto-generated catch block
 			System.out.println("Error in getting connection");
 			e.printStackTrace();
 		}
